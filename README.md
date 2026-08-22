@@ -28,6 +28,11 @@ This submod was developed and tested with MAS 0.12.18 and 0.12.15.
 
 ## Installation
 
+Before installing the submod, make sure Monika After Story is not running.
+
+If you are currently spending time with Monika, please say goodbye to her
+before closing the game.
+
 1. Download the latest release from the **Releases** section.
 2. Extract the downloaded archive.
 3. Copy the `Quickly Compliments` folder into your MAS `game/Submods` directory.
@@ -81,10 +86,18 @@ If you notice any translation errors, feel free to let me know.
 
 ## Uninstallation
 
-1. Close Monika After Story.
-2. Open your MAS game/Submods directory.
-3. Remove the Quickly Compliments folder.
-4. Start MAS again.
+Before uninstalling the submod, make sure you have said goodbye to Monika
+if you are currently spending time with her.
+
+1. Say goodbye to Monika and exit the game normally.
+
+2. Open your MAS `game/Submods` directory.
+
+3. Remove the `Quickly Compliments` folder.
+
+4. Start Monika After Story again.
+
+Your settings for Quickly Compliments will be removed along with the submod.
 
 ## Automatic Updates
 
