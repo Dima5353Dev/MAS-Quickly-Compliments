@@ -78,12 +78,22 @@ You can restore it later by selecting one of the button positions.
 3. Remove the Quickly Compliments folder.
 4. Start MAS again.
 
+## Automatic Updates
+
+Quickly Compliments supports automatic updates through the **Submod Updater Plugin**.
+
+The plugin is optional. Quickly Compliments does not require it to run.
+
+You can download the Submod Updater Plugin here:
+
+[Submod Updater Plugin](https://github.com/Booplicate/MAS-Submods-SubmodUpdaterPlugin)
+
 ## Credits
 
 **Quickly Compliments**  
 Created by **Dima5353**
 
-Made in Russia with love. 
+Made in Russia with love. <3
 
 Made for **Monika After Story**.
 
