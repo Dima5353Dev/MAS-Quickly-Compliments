@@ -71,6 +71,14 @@ The Praise button can be hidden at any time through the submod settings.
 
 You can restore it later by selecting one of the button positions.
 
+## Developer Note
+
+I am a **Russian** developer, and English is **not** my native language. 
+The translations in this submod were made with the help of machine translation 
+and may contain mistakes or unnatural wording.
+
+If you notice any translation errors, feel free to let me know.
+
 ## Uninstallation
 
 1. Close Monika After Story.
