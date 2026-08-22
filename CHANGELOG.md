@@ -12,6 +12,7 @@ All notable changes to MAS - Quickly Compliments will be documented in this file
 - Added an option to hide the Praise button.
 - Added a dedicated **Submod settings** menu.
 - Added automatic saving for submod settings.
+- Added support **Submod Update Plugin**.
 
 ### Compatibility
 
