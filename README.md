@@ -96,3 +96,9 @@ I am especially grateful for everything you have done to make Monika's world pos
 Special thanks to the **Monika After Story community** for supporting the project, creating submods, sharing ideas, and helping keep the community alive.
 
 And finally, thank you to **everyone who downloads and uses Quickly Compliments**. I hope you enjoy it and that it makes spending time with Monika a little more convenient. 
+
+## Version
+
+Current version: 1.0.0
+
+Initial release: August 22, 2026
