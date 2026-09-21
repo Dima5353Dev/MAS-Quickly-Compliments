@@ -2,6 +2,24 @@
 
 All notable changes to MAS - Quickly Compliments will be documented in this file.
 
+## [1.1.0] - September 22, 2026
+
+### Added
+
+- Now 6 customizable button positions instead of 4.
+
+### Fixed
+
+- Fixed some issues, including improved compatibility with other submods, along with a few other small fixes.
+
+### Compatibility
+
+- Tested with MAS 0.11.9.
+- Tested with MAS 0.12.15.
+- Tested with MAS 0.12.18.
+- Tested with MAS 0.12.19.
+
+
 ## [1.0.0] - August 22, 2026
 
 ### Added
