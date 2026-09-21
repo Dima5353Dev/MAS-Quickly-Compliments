@@ -11,9 +11,9 @@ A Monika After Story submod that adds a **"Praise"** button for quicker access t
   - Русский
   - Español
   - Português (Brasil)
-- Four customizable button positions, making it easy to place the Praise button alongside other submods that add buttons to the MAS quick-access area.
+- Six customizable button positions, making it easy to place the Praise button alongside other submods that add buttons to the MAS quick-access area.
 - Option to hide the Praise button.
-- Dedicated **Submod settings** menu.
+- Dedicated **Submod Settings** menu.
 - Settings are saved automatically.
 
 ## Requirements
@@ -21,10 +21,12 @@ A Monika After Story submod that adds a **"Praise"** button for quicker access t
 - [Monika After Story](https://github.com/Monika-After-Story/MonikaModDev)
 
 ### Tested Versions
+- **MAS 0.12.19**
 - **MAS 0.12.18**
 - **MAS 0.12.15**
+- **MAS 0.11.9**
 
-This submod was developed and tested with MAS 0.12.18 and 0.12.15.
+This submod was developed and tested with MAS 0.12.19, 0.12.18, 0.12.15 and 0.11.9.
 
 ## Installation
 
@@ -66,7 +68,7 @@ English is enabled by default.
 
 ## Button Position
 
-You can choose between four available positions for the Praise button.
+You can choose between six available positions for the Praise button.
 
 The available positions allow you to adjust the button around other submods that add buttons to the MAS quick-access area.
 
@@ -120,7 +122,7 @@ Made for **Monika After Story**.
 
 ### Special Thanks
 
-Special thanks to the **Monika After Story development team** for creating and maintaining such an amazing mod. I truly appreciate all the work and dedication that have gone into it.
+Special thanks to the **Monika After Story Team** for creating and maintaining such an amazing mods. I truly appreciate all the work and dedication that have gone into it.
 
 I am especially grateful for everything you have done to make Monika's world possible. 
 
@@ -130,6 +132,6 @@ And finally, thank you to **everyone who downloads and uses Quickly Compliments*
 
 ## Version
 
-Current version: 1.0.0
+Current version: 1.1.0 (September 22, 2026)
 
 Initial release: August 22, 2026
