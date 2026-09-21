@@ -1,18 +1,18 @@
 # ============================================================
-# |Register|
+# [Register]
 #
 # Quickly Compliments
 # by Dima5353 from Russia with love <3
 #
-# Monika After Story 0.12.18 and 0.12.15
+# Monika After Story 0.12.19, 0.12.18, 0.12.15 and 0.11.9!
 # ============================================================
 
 init -990 python:
     store.mas_submod_utils.Submod(
         author="Dima5353 from Russia with love",
         name="Quickly Compliments",
-        description="This submod adds a 'Praise' button, allowing you to quickly access Monika’s compliments!",
-        version="1.0.0",
+        description="This submod adds a «Praise» button, allowing you to quickly access Monika’s compliments!",
+        version="1.1.0",
         settings_pane="quickly_compliments_settings"
     )
     

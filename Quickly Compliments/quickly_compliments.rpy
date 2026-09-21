@@ -2,7 +2,7 @@
 # Quickly Compliments
 # by Dima5353 from Russia with love <3
 #
-# Monika After Story 0.12.18 and 0.12.15
+# Monika After Story 0.12.19, 0.12.18, 0.12.15 and 0.11.9!
 # ============================================================
 
 
@@ -20,7 +20,7 @@ init -990 python:
 
 
     if not hasattr(persistent, "qc_button_hidden"):
-        persistent.qc_button_hidden = False
+        persistent.qc_button_hidden = True
 
 
     def qc_set_language(language):
@@ -36,6 +36,8 @@ init -990 python:
         persistent.qc_button_position = position
         persistent.qc_button_hidden = False
 
+        qc_sync_journal_position()
+
         renpy.save_persistent()
         renpy.restart_interaction()
 
@@ -43,6 +45,8 @@ init -990 python:
     def qc_hide_button():
 
         persistent.qc_button_hidden = True
+
+        qc_sync_journal_position()
 
         renpy.save_persistent()
         renpy.restart_interaction()
@@ -62,7 +66,50 @@ init -990 python:
         elif persistent.qc_button_position == 3:
             return 135
 
-        return 95
+        elif persistent.qc_button_position == 4:
+            return 175
+
+        elif persistent.qc_button_position == 5:
+            return 215
+
+
+    def qc_sync_journal_position():
+
+        if not hasattr(store, "journal_left_stack_ypos"):
+            return
+
+        old_ypos = getattr(
+            store,
+            "_qc_journal_registered_ypos",
+            None
+        )
+
+        if old_ypos is not None:
+
+            try:
+
+                while old_ypos in store.journal_left_stack_ypos:
+                    store.journal_left_stack_ypos.remove(
+                        old_ypos
+                    )
+
+            except (AttributeError, ValueError):
+                pass
+
+        store._qc_journal_registered_ypos = None
+
+
+        if persistent.qc_button_hidden:
+            return
+
+
+        if hasattr(store, "journal_register_left_button"):
+
+            ypos = qc_button_ypos() + 35
+
+            store.journal_register_left_button(ypos)
+
+            store._qc_journal_registered_ypos = ypos
 
 
     def qc_text(text_id):
@@ -95,19 +142,19 @@ init -990 python:
             elif language == "pt":
                 return "Configurações do submod"
 
-            return "Submod settings"
+            return "Submod Settings"
 
 
         elif text_id == "title":
 
             if language == "ru":
-                return "Быстрые Комплименты"
+                return "Быстрые комплименты"
 
             elif language == "es":
-                return "Cumplidos Rápidos"
+                return "Cumplidos rápidos"
 
             elif language == "pt":
-                return "Elogios Rápidos"
+                return "Elogios rápidos"
 
             return "Quickly Compliments"
 
@@ -137,7 +184,7 @@ init -990 python:
             elif language == "pt":
                 return "Posição do botão"
 
-            return "Button position"
+            return "Button Position"
 
 
         elif text_id == "position_1":
@@ -196,6 +243,34 @@ init -990 python:
             return "Position 4"
 
 
+        elif text_id == "position_5":
+
+            if language == "ru":
+                return "Положение 5"
+
+            elif language == "es":
+                return "Posición 5"
+
+            elif language == "pt":
+                return "Posição 5"
+
+            return "Position 5"
+
+
+        elif text_id == "position_6":
+
+            if language == "ru":
+                return "Положение 6"
+
+            elif language == "es":
+                return "Posição 6"
+
+            elif language == "pt":
+                return "Posição 6"
+
+            return "Position 6"
+
+
         elif text_id == "hide":
 
             if language == "ru":
@@ -231,12 +306,13 @@ style qc_praise_ru_text is hkb_button_text:
 
     font "Submods/Quickly Compliments/Aller_Rg.ttf"
     size 22
-    
+
 
 style qc_submod_settings_button is generic_button_light:
 
     xalign 0.0
     padding (8, 5, 8, 5)
+
 
 style qc_submod_settings_button_dark is generic_button_dark:
 
@@ -497,6 +573,7 @@ screen quickly_compliments_settings_window():
 
             xalign 0.5
 
+
             text qc_text("title"):
 
                 style _qc_text_style
@@ -504,6 +581,7 @@ screen quickly_compliments_settings_window():
 
 
             null height 8
+
 
             text qc_text("language"):
 
@@ -660,6 +738,42 @@ screen quickly_compliments_settings_window():
                 )
 
 
+            textbutton qc_text("position_5"):
+
+                style _qc_button_style
+                text_style _qc_button_text_style
+
+                xalign 0.5
+
+                sensitive (
+                    persistent.qc_button_hidden
+                    or persistent.qc_button_position != 4
+                )
+
+                action Function(
+                    qc_set_position,
+                    4
+                )
+
+
+            textbutton qc_text("position_6"):
+
+                style _qc_button_style
+                text_style _qc_button_text_style
+
+                xalign 0.5
+
+                sensitive (
+                    persistent.qc_button_hidden
+                    or persistent.qc_button_position != 5
+                )
+
+                action Function(
+                    qc_set_position,
+                    5
+                )
+
+
             textbutton qc_text("hide"):
 
                 style _qc_button_style
@@ -698,3 +812,5 @@ init 5 python:
         config.overlay_screens.append(
             "quick_compliments_button"
         )
+
+    qc_sync_journal_position()
