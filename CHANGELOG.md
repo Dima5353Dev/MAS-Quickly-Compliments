@@ -11,8 +11,8 @@ All notable changes to MAS - Quickly Compliments will be documented in this file
 
 ### Special Thanks
 
-Special thanks to u/Pastelpawz_ and u/Zephrynia for being the first to report these issues and for taking the time to discuss them with me.
-Also, thank you to u/Necessary-Money3182 for reporting the same TypeError issue.
+- Special thanks to u/Pastelpawz_ and u/Zephrynia for being the first to report these issues and for taking the time to discuss them with me.
+- Also, thank you to u/Necessary-Money3182 for reporting the same TypeError issue.
 
 
 ## [1.1.0] - September 22, 2026
