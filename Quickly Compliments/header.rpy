@@ -12,7 +12,7 @@ init -990 python:
         author="Dima5353 from Russia with love",
         name="Quickly Compliments",
         description="This submod adds a «Praise» button, allowing you to quickly access Monika’s compliments!",
-        version="1.1.0",
+        version="1.1.1",
         settings_pane="quickly_compliments_settings"
     )
     

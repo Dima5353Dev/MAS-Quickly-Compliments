@@ -15,7 +15,11 @@ init -990 python:
         persistent.qc_language = "en"
 
 
+    valid_positions = [0, 1, 2, 3, 4, 5]
+
     if not hasattr(persistent, "qc_button_position"):
+        persistent.qc_button_position = 2
+    elif persistent.qc_button_position not in valid_positions:
         persistent.qc_button_position = 2
 
 
@@ -71,6 +75,8 @@ init -990 python:
 
         elif persistent.qc_button_position == 5:
             return 215
+        
+        return 95
 
 
     def qc_sync_journal_position():
@@ -377,12 +383,15 @@ label quick_compliments:
     $ _qc_hotkeys_enabled = store.mas_hotkeys.talk_enabled
     $ _qc_dlg_workflow = store.mas_globals.dlg_workflow
 
+    $ mas_HKBRaiseShield()
+    $ store.mas_hotkeys.talk_enabled = False
 
+    $ store.mas_globals.dlg_workflow = True
+    
     $ _qc_noises_installed = hasattr(
         store.hkb_button,
         "_otter_noises_enabled"
     )
-
 
     if _qc_noises_installed:
 
@@ -392,35 +401,61 @@ label quick_compliments:
 
         $ store.hkb_button._otter_noises_enabled = False
 
-
-    $ mas_HKBRaiseShield()
-
-    $ store.mas_hotkeys.talk_enabled = False
-
-    $ store.mas_globals.dlg_workflow = True
-
     $ store.hkb_button.music_enabled = True
 
+    python:
+        Event.checkEvents(mas_compliments.compliment_database)
 
-    call monika_compliments
+        compliments_menu_items = [
+        (ev.prompt, ev_label, not seen_event(ev_label), False)
+        for ev_label, ev in mas_compliments.compliment_database.iteritems()
+        if (
+            Event._filterEvent(
+                ev,
+                unlocked=True,
+                aff=mas_curr_affection,
+                flag_ban=EV_FLAG_HFM
+            )
+            and (
+                not hasattr(ev, "checkConditional")
+                or ev.checkConditional()
+            )
+        )
+    ]
 
+        compliments_menu_items.sort()
 
-    show monika at t11
+    $ final_item = ("Oh nevermind.", False, False, False, 20)
 
+    show monika at t21
 
-    $ store.mas_globals.dlg_workflow = _qc_dlg_workflow
+    call screen mas_gen_scrollable_menu(compliments_menu_items, mas_ui.SCROLLABLE_MENU_MEDIUM_AREA, mas_ui.SCROLLABLE_MENU_XALIGN, final_item)
 
-    $ store.mas_hotkeys.talk_enabled = _qc_hotkeys_enabled
+    if _return:
+        $ _qc_compliment = _return
 
+        python:
+            if hasattr(mas_compliments, "compliment_delegate_callback"):
+                mas_compliments.compliment_delegate_callback()
 
+        show monika at t11
+
+        call expression _qc_compliment
+
+        if _return is not None:
+            $ _qc_ret_items = _return.split("|")
+
+            if "love" in _qc_ret_items:
+                $ mas_ILY()
+
+    else:
+        show monika at t11
+        
     if _qc_noises_installed:
 
         $ store.hkb_button._otter_noises_enabled = (
             _qc_noises_enabled
         )
-
-
-    $ mas_HKBDropShield()
 
     return
 
@@ -814,3 +849,6 @@ init 5 python:
         )
 
     qc_sync_journal_position()
+
+
+# А я знаю, что ты это читаешь. ;) 
