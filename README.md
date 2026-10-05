@@ -132,6 +132,6 @@ And finally, thank you to **everyone who downloads and uses Quickly Compliments*
 
 ## Version
 
-Current version: 1.1.0 (September 22, 2026)
+Current version: 1.1.1 (October 5, 2026)
 
 Initial release: August 22, 2026
