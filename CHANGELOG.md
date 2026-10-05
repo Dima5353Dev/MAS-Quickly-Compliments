@@ -2,6 +2,19 @@
 
 All notable changes to MAS - Quickly Compliments will be documented in this file.
 
+## [1.1.1] - October 5, 2026
+
+### Fixed
+
+- Attempted to fix an issue where Random Chatter could play before a compliment.
+- Attempted to fix a TypeError related to the button/journal position that could cause a traceback.
+
+### Special Thanks
+
+Special thanks to u/Pastelpawz_ and u/Zephrynia for being the first to report these issues and for taking the time to discuss them with me.
+Also, thank you to u/Necessary-Money3182 for reporting the same TypeError issue.
+
+
 ## [1.1.0] - September 22, 2026
 
 ### Added
@@ -28,7 +41,7 @@ All notable changes to MAS - Quickly Compliments will be documented in this file
 - Added support for English, Russian, Spanish, and Brazilian Portuguese.
 - Added four customizable button positions.
 - Added an option to hide the Praise button.
-- Added a dedicated **Submod settings** menu.
+- Added a dedicated **Submod Settings** menu.
 - Added automatic saving for submod settings.
 - Added support **Submod Update Plugin**.
 
